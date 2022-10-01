@@ -69,6 +69,7 @@ class Student extends AbstractExtensibleModel implements StudentInterface
     {
         return $this->setData(self::NAME, $name);
     }
+
     /**
      * Get Email Method
      *

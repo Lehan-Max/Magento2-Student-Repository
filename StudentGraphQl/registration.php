@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Copyright © Lehan, Inc. All rights reserved.
  * See COPYING.txt for license details.

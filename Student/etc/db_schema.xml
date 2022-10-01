@@ -7,7 +7,6 @@
 -->
 <schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
-
     <table name="student_details" resource="default" engine="innodb"
            comment="student table">
         <column xsi:type="int" name="student_id" padding="10" unsigned="true" nullable="false" identity="true"
