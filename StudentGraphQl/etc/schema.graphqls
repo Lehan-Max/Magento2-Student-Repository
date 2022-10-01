@@ -1,0 +1,48 @@
+type Query {
+    getStudentInformation( student_id: Int @doc(description: "Specify the Student Id")): [StudentInfoOutput] @resolver(class: "Adobe\\StudentGraphQl\\Model\\Resolver\\GetStudentInformation") @doc(description: "The Student Information query returns information about a Student Based on Id specified")
+    deleteStudentById( student_id: Int! @doc(description: "Specify the Student Id")): [StudentDeleteOutput] @resolver(class: "Adobe\\StudentGraphQl\\Model\\Resolver\\DeleteStudentById") @doc(description: "The deleteStudentById query delete Based on Id specified")
+}
+
+type Mutation {
+    studentGraphqlMutation (
+        name: String!
+        email: String
+        phone: String
+        student_marks: String
+        student_address: String
+        student_city: String
+    ): [StudentGraphqlMutationOutput] @resolver(class: "Adobe\\StudentGraphQl\\Model\\Resolver\\SaveNewStudent") @doc(description:"Add New Student Data")
+    studentUpdateGraphqlMutation (
+        student_id: Int!
+        name: String
+        email: String
+        phone: String
+        student_marks: String
+        student_address: String
+        student_city: String
+    ): [StudentGraphqlMutationOutput] @resolver(class: "Adobe\\StudentGraphQl\\Model\\Resolver\\UpdateNewStudent") @doc(description:"Update New Student Data")
+}
+
+type StudentGraphqlMutationOutput {
+    name: String
+    email: String
+    phone: String
+    student_marks: String
+    student_address: String
+    student_city: String
+}
+
+type StudentInfoOutput {
+    student_id: Int
+    name: String
+    email: String
+    phone: String
+    student_marks: String
+    student_address: String
+    student_city: String
+}
+
+type StudentDeleteOutput {
+    status: String
+    message: String
+}
